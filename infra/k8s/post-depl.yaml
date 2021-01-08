@@ -17,4 +17,17 @@ spec:
           image: ali2535/post-mc:latest
           imagePullPolicy: IfNotPresent
   
+---
 
+apiVersion: v1
+kind: Service
+metadata:
+  name: post-clusterip-srv
+spec:
+  selector:
+    app: posts
+  ports:
+    - name: post-clusterip-srv-ports
+      protocol: TCP
+      port: 4000
+      targetPort: 4000
