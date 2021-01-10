@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: event-bus
+  name: moderations-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: event-bus
+      app: moderations
   template:
     metadata:
       labels:
-        app: event-bus
+        app: moderations
     spec:
       containers:
-        - name: event-bus
-          image: ali2535/event-bus:latest
-
+        - name: moderations
+          image: ali2535/moderations-ms:latest
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
-  name: event-bus-srv
+  name: moderations-clusterip-srv
 spec:
   selector:
-    app: event-bus
+    app: moderations
   type: ClusterIP
   ports:
-    - name: event-bus-ports
+    - name: moderations
       protocol: TCP
-      port: 4005
-      targetPort: 4005
+      port: 4003
+      targetPort: 4003

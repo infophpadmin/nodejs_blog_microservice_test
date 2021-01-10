@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: posts
-          image: ali2535/post-mc:latest
-          imagePullPolicy: IfNotPresent
+          image: ali2535/posts-ms:latest
+          imagePullPolicy: Always
   
 ---
 
