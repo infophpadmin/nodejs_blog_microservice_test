@@ -16,6 +16,8 @@ spec:
         - name: posts
           image: ali2535/posts-ms:latest
           imagePullPolicy: Always
+          ports:
+            - containerPort: 4000
   
 ---
 
@@ -26,6 +28,7 @@ metadata:
 spec:
   selector:
     app: posts
+  type: ClusterIP    
   ports:
     - name: post-clusterip-srv-ports
       protocol: TCP
