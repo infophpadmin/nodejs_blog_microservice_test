@@ -3,6 +3,10 @@ const bodyParser = require('body-parser');
 const { randomBytes } = require('crypto');
 const cors = require('cors');
 const axios = require('axios');
+require('dotenv').config()
+
+const port = process.env.PORT;
+const eventBusService= process.env.EVENT_BUS_SERVICE
 
 const app = express();
 app.use(bodyParser.json());
@@ -14,7 +18,7 @@ app.get('/posts', (req, res) => {
   res.send(posts);
 });
 
-app.post('/posts', async (req, res) => {
+app.post('/posts/create', async (req, res) => {
   const id = randomBytes(4).toString('hex');
   const { title } = req.body;
 
@@ -40,7 +44,7 @@ app.post('/events', (req, res) => {
   res.send({});
 });
 
-app.listen(4000, () => {
+app.listen(port, () => {
   console.log('Post container is started ...')
-  console.log('Listening on 4000');
+  console.log('Listening on ' + port);
 });
