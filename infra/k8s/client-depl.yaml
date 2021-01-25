@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: client-depl
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: client
@@ -13,18 +14,17 @@ spec:
     spec:
       containers:
         - name: client
-          image: ali2535/react-client
-          ports:
-            - containerPort: 3000
+          image: ali2535/client-ms:latest
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: client-svc
+  name: client-srv
 spec:
   selector:
     app: client
   ports:
-    - port: 3000
+    - name: client
       protocol: TCP
+      port: 3000
       targetPort: 3000
