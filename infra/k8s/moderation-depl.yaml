@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: moderation
-          image: ali2535/moderations-ms:latest
+          image: ali2535/moderation-ms:latest
 ---
 apiVersion: v1
 kind: Service

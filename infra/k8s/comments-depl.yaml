@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: comments
-          image: ali2535/comments-ms:latest
+          image: ali2535/comment-ms:latest
 ---
 apiVersion: v1
 kind: Service

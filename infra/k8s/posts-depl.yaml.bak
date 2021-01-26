@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: posts
-          image: ali2535/posts-ms:latest
+          image: ali2535/post-ms:latest
 ---
 apiVersion: v1
 kind: Service
