@@ -14,9 +14,8 @@ spec:
     spec:
       containers:
         - name: query
-          image: ali2535/query-ms:latest
+          image: infophpadmin/query:latest
 ---
-
 apiVersion: v1
 kind: Service
 metadata:

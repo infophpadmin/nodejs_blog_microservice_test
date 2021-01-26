@@ -28,7 +28,7 @@ spec:
         path: "/posts/?(.*)/comments"
         backend:
           service:
-            name: comments-clusterip-srv
+            name: comment-clusterip-srv
             port:
               number: 4001
       - pathType: Prefix
@@ -38,4 +38,3 @@ spec:
             name: client-svc
             port:
               number: 3000
-        

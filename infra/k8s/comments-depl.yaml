@@ -14,14 +14,13 @@ spec:
     spec:
       containers:
         - name: comments
-          image: ali2535/comments-ms:latest
-
+          image: infophpadmin/comment:latest
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: comments-clusterip-srv
+  name: comment-clusterip-srv
 spec:
   selector:
     app: comments

@@ -14,13 +14,12 @@ spec:
     spec:
       containers:
         - name: event-bus
-          image: ali2535/event-bus:latest
-
+          image: infophpadmin/event-bus:latest
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: event-bus-srv
+  name: event-bus-clusterip-srv
 spec:
   selector:
     app: event-bus
