@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: client-depl
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: client
@@ -14,17 +13,20 @@ spec:
     spec:
       containers:
         - name: client
-          image: ali2535/client-ms:latest
+          image: infophpadmin/client:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
-  name: client-srv
+  name: client-clusterip-svc
 spec:
   selector:
     app: client
   ports:
-    - name: client
+    - port: 3000
       protocol: TCP
-      port: 3000
       targetPort: 3000

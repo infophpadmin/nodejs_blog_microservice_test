@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: event-bus-depl
+  name: event-bus
 spec:
   replicas: 1
   selector:
@@ -14,17 +14,18 @@ spec:
     spec:
       containers:
         - name: event-bus
-          image: ali2535/event-bus-ms:latest
+          image: infophpadmin/event-bus:latest
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: event-bus-srv
+  name: event-bus-clusterip-srv
 spec:
   selector:
     app: event-bus
+  type: ClusterIP
   ports:
-    - name: event-bus
+    - name: event-bus-ports
       protocol: TCP
       port: 4005
       targetPort: 4005

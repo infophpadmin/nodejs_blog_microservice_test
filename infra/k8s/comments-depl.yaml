@@ -6,7 +6,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: comments
+     app: comments
   template:
     metadata:
       labels:
@@ -14,15 +14,17 @@ spec:
     spec:
       containers:
         - name: comments
-          image: ali2535/comment-ms:latest
+          image: infophpadmin/comment:latest
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
-  name: comments-srv
+  name: comment-clusterip-srv
 spec:
   selector:
     app: comments
+  type: ClusterIP
   ports:
     - name: comments
       protocol: TCP
