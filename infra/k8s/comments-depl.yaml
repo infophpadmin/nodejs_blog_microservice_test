@@ -6,7 +6,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-     app: comments
+      app: comments
   template:
     metadata:
       labels:
@@ -16,7 +16,6 @@ spec:
         - name: comments
           image: infophpadmin/comment:latest
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
