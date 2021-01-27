@@ -21,7 +21,7 @@ spec:
         path: "/posts"
         backend:
           service:
-            name: query-clusterip-srv
+            name: query-srv
             port:
               number: 4002
       - pathType: Prefix
@@ -35,6 +35,6 @@ spec:
         path: "/?(.*)"
         backend:
           service:
-            name: client-svc
+            name: client-clusterip-svc
             port:
               number: 3000
