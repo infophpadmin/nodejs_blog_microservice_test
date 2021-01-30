@@ -8,7 +8,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: infophpadmin/client
+    - image: infophpadmin/client:latest
       context: client
       docker:
         dockerfile: Dockerfile
@@ -16,7 +16,7 @@ build:
         manual:
           - src: 'src/**/*.js'
             dest: .
-    - image: infophpadmin/comment
+    - image: infophpadmin/comment:latest
       context: comments
       docker:
         dockerfile: Dockerfile
@@ -24,7 +24,7 @@ build:
         manual:
           - src: '*.js'
             dest: .
-    - image: infophpadmin/event-bus
+    - image: infophpadmin/event-bus:latest
       context: event-bus
       docker:
         dockerfile: Dockerfile
@@ -32,7 +32,7 @@ build:
         manual:
           - src: '*.js'
             dest: .
-    - image: infophpadmin/moderation
+    - image: infophpadmin/moderation:latest
       context: moderation
       docker:
         dockerfile: Dockerfile
@@ -40,7 +40,7 @@ build:
         manual:
           - src: '*.js'
             dest: .
-    - image: infophpadmin/post
+    - image: infophpadmin/post:latest
       context: posts
       docker:
         dockerfile: Dockerfile
@@ -48,7 +48,7 @@ build:
         manual:
           - src: '*.js'
             dest: .
-    - image: infophpadmin/query
+    - image: infophpadmin/query:latest
       context: query
       docker:
         dockerfile: Dockerfile
