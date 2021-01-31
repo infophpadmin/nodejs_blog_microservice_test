@@ -8,7 +8,7 @@ build:
   tagPolicy:
     sha256: {}
   local:
-    push: false
+    push: true
   artifacts:
     - image: infophpadmin/client
       context: client
